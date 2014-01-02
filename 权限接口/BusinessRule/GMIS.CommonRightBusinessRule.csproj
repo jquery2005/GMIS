@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E93F173-47AA-41F5-8A34-04826DD0FEC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GMIS.CommonRightBusinessRule</RootNamespace>
+    <AssemblyName>GMIS.CommonRightBusinessRule</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\PublishDll\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConfigMy, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PublishDll\ConfigMy.dll</HintPath>
+    </Reference>
+    <Reference Include="createdmquery, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PublishDll\createdmquery.dll</HintPath>
+    </Reference>
+    <Reference Include="Operation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PublishDll\Operation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCommonInfo.cs" />
+    <Compile Include="CConditionRight.cs" />
+    <Compile Include="CConfigManager.cs" />
+    <Compile Include="CDealLayerObject.cs" />
+    <Compile Include="CFlxDog.cs" />
+    <Compile Include="CFlxRocket.cs" />
+    <Compile Include="CFlxRocket4.cs" />
+    <Compile Include="CModule.cs" />
+    <Compile Include="CModuleRight.cs" />
+    <Compile Include="CNetWork.cs" />
+    <Compile Include="CObjectAssociate.cs" />
+    <Compile Include="CProperty.cs" />
+    <Compile Include="CRockey2.cs" />
+    <Compile Include="CStructure.cs" />
+    <Compile Include="CUser.cs" />
+    <Compile Include="CUsers.cs" />
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyBase.cs" />
+    <Compile Include="ProfessionalEncryptDog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSAProtection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StandardEncryptDog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKey.resx">
+      <DependentUpon>FrmKey.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\GMIS.CommonRightDataAccess.csproj">
+      <Project>{5498E1F7-B7FB-43FE-8781-65F7CC97CF12}</Project>
+      <Name>GMIS.CommonRightDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gmis.Protection\Gmis.Protection.csproj">
+      <Project>{CBF0D2F8-9728-471F-A19B-9549F186221C}</Project>
+      <Name>Gmis.Protection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rockey_H.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

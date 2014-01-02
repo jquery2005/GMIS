@@ -1,0 +1,8 @@
+D:\CSharp\GitHub\GMIS\权限接口\BusinessRule\obj\Debug\GMIS.CommonRightBusinessRule.FormMessage.resources
+D:\CSharp\GitHub\GMIS\权限接口\BusinessRule\obj\Debug\GMIS.CommonRightBusinessRule.FrmKey.resources
+D:\CSharp\GitHub\GMIS\权限接口\BusinessRule\obj\Debug\GMIS.CommonRightBusinessRule.csproj.GenerateResource.Cache
+D:\CSharp\GitHub\GMIS\权限接口\BusinessRule\obj\Debug\GMIS.CommonRightBusinessRule.csprojResolveAssemblyReference.cache
+D:\CSharp\GitHub\GMIS\PublishDll\GMIS.CommonRightBusinessRule.dll
+D:\CSharp\GitHub\GMIS\PublishDll\GMIS.CommonRightBusinessRule.pdb
+D:\CSharp\GitHub\GMIS\权限接口\BusinessRule\obj\Debug\GMIS.CommonRightBusinessRule.dll
+D:\CSharp\GitHub\GMIS\权限接口\BusinessRule\obj\Debug\GMIS.CommonRightBusinessRule.pdb

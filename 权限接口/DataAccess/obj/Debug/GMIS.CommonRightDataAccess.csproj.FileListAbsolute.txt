@@ -1,0 +1,4 @@
+D:\CSharp\GitHub\GMIS\PublishDll\GMIS.CommonRightDataAccess.dll
+D:\CSharp\GitHub\GMIS\PublishDll\GMIS.CommonRightDataAccess.pdb
+D:\CSharp\GitHub\GMIS\权限接口\DataAccess\obj\Debug\GMIS.CommonRightDataAccess.dll
+D:\CSharp\GitHub\GMIS\权限接口\DataAccess\obj\Debug\GMIS.CommonRightDataAccess.pdb

@@ -1,0 +1,4 @@
+D:\CSharp\GitHub\GMIS\PublishDll\Gmis.Protection.dll
+D:\CSharp\GitHub\GMIS\PublishDll\Gmis.Protection.pdb
+D:\CSharp\GitHub\GMIS\权限接口\Gmis.Protection\obj\Debug\Gmis.Protection.dll
+D:\CSharp\GitHub\GMIS\权限接口\Gmis.Protection\obj\Debug\Gmis.Protection.pdb
