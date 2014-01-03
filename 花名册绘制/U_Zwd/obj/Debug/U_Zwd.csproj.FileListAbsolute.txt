@@ -1,0 +1,7 @@
+D:\CSharp\GitHub\GMIS\PublishDll\U_Zwd.dll
+D:\CSharp\GitHub\GMIS\PublishDll\U_Zwd.pdb
+D:\CSharp\GitHub\GMIS\花名册绘制\U_Zwd\obj\Debug\U_Zwd.csprojResolveAssemblyReference.cache
+D:\CSharp\GitHub\GMIS\花名册绘制\U_Zwd\obj\Debug\U_Zwd.frm_Debug.resources
+D:\CSharp\GitHub\GMIS\花名册绘制\U_Zwd\obj\Debug\U_Zwd.csproj.GenerateResource.Cache
+D:\CSharp\GitHub\GMIS\花名册绘制\U_Zwd\obj\Debug\U_Zwd.dll
+D:\CSharp\GitHub\GMIS\花名册绘制\U_Zwd\obj\Debug\U_Zwd.pdb

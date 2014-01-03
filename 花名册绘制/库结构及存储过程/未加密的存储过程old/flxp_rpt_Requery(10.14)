@@ -1,0 +1,166 @@
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS OFF 
+GO
+
+
+
+
+alter    PROCEDURE   flxp_rpt_Requery  
+ @TBL varchar(1000),--表名
+ @FLD varchar(2000),--字段名
+ @ASS varchar(1000),--相关字段名
+ @STRCondtion varchar(8000),--条件
+ @strMainObject varchar(4),--主对象名
+ @strOut varchar(8000) output--输出
+with ENCRYPTION 
+AS
+declare @strSQl varchar(6000)
+declare @strTBL varchar(6000)
+declare @strFLD varchar(6000)
+declare @za0100 varchar(100)
+declare @za0101 varchar(100)
+--set @TBL='AB01,AA03,AB03'
+--set @ASS='AA01.AB0110,AA01.AE0122'
+--set @FLD='AA01.ZA0101,AA01.AA0107,AA01.AA0117,AA01.AA0121'
+--set @strMainObject="AA01"
+declare @length int
+declare @ItemIdList varchar(5000)
+declare @FirstItemIdWord varchar(1000)
+declare @strtemp varchar(100)
+--向关联字段中填加名称
+if @ASS='' or charindex('ZA0101',upper(@ASS),1)<=0
+  if @ASS=''
+     set @ASS=@strMainObject+".ZA0101"
+  else
+     set @ASS=@ASS+','+@strMainObject+".ZA0101"
+
+
+SET QUOTED_IDENTIFIER OFF  
+set @strTBL=@strMainObject+" "
+		--表名
+		set @ItemIdList=@TBL
+
+		SELECT @Length = DATALENGTH(@ItemIdList)
+		    WHILE @Length > 0
+	
+		    BEGIN
+   			 EXECUTE @Length = flxp_PopFirstWord @ItemIdList OUTPUT, @FirstItemIdWord OUTPUT
+
+			if(left(@strMainObject,2)=left(@FirstItemIdWord,2))
+			begin
+				set @strTBL=@strTBL+" left join " +@FirstItemIdWord +" on "+@strMainObject+".za0100="+@FirstItemIdWord+".za0100 and "+@FirstItemIdWord+".zc9993='1' "
+	
+			end
+			else if(left(@strMainObject,2)<>left(@FirstItemIdWord,2) and substring(@FirstItemIdWord,3,2)='01' )
+	
+
+			begin
+
+
+				set @strSQl=" declare curs_gwmc cursor for select top 1 isnull(infofield,'ZA0100') from gs_property where left(dictid,4)='"+@FirstItemIdWord+"' and infoid='"+@strMainObject+"'   open curs_gwmc"
+				exec(@strsql)
+				fetch next from  curs_gwmc into @strtemp
+				close Curs_gwmc
+				deallocate Curs_gwmc
+				set @strTBL=@strTBL+" left join "+@FirstItemIdWord+" on "+@strMainObject+"."+@strtemp+"="+@FirstItemIdWord+".za0100 "--and "+@FirstItemIdWord+".zc9993='1' "
+			end
+			else
+			begin
+				set @strSQl="declare curs_gwmc cursor for  select top 1 isnull(infofield,'ZA0100') from gs_property where left(dictid,4)='"+left(@FirstItemIdWord,2)+"01' and infoid='"+@strMainObject+"'  open curs_gwmc"
+				exec(@strsql)
+				fetch next from  curs_gwmc into @strtemp
+				close Curs_gwmc
+				deallocate Curs_gwmc
+
+				set @strTBL=@strTBL+" left join "+@FirstItemIdWord+"  on "+@strMainObject+"."+@strtemp+"="+@FirstItemIdWord+".za0100 and "+@FirstItemIdWord+".zc9993='1' "
+
+			end
+
+		    end 
+		--关隧字段
+		set @ItemIdList=@ASS
+		set @strFLD=""
+		SELECT @Length = DATALENGTH(@ItemIdList)
+		    WHILE @Length > 0
+
+		    BEGIN
+   			 EXECUTE @Length = flxp_PopFirstWord @ItemIdList OUTPUT, @FirstItemIdWord OUTPUT
+			 select  @za0100=isnull(dictid,'') from gs_property where infofield=right(@FirstItemIdWord,6) and  infoid=left(@FirstItemIdWord,4)
+  			 select @za0101=isnull(description,'未知') from  gs_property where infofield=right(@FirstItemIdWord,6) and  infoid=left(@FirstItemIdWord,4)
+			 if @za0100=''
+				begin
+					set @strSQl=@FirstItemIdWord+" as '"+@za0101+"'"
+				end
+			else if len(ltrim(@za0100))=2
+				begin
+					--set @strSQl="(select isnull(description,'')   from gs_dictitem where gs_dictitem.dictvalue="+@FirstItemIdWord+" and gs_dictitem.dictid='"+ltrim(@za0100)+"') as  '"+@za0101+"'"
+					set @strSQl="dbo.get_DictIdName('"+ltrim(@za0100) + "',"+@FirstItemIdWord + ") as  '"+@za0101+"'"
+				end
+			else 
+				begin
+					set @strSQl="(select isnull(za0101,'')   from "+left(@za0100,4)+" where "+@FirstItemIdWord+"="+left(@za0100,4)+".za0100) as  '"+@za0101+"'"
+				end
+			if @strFLD="" 
+				set @strFLD=@strSQl
+			else
+				set @strFLD=@strFLD+","+@strSQl		
+	
+		    end 
+
+		--处理字段
+		set @ItemIdList=@FLD
+		SELECT @Length = DATALENGTH(@ItemIdList)
+		    WHILE @Length > 0
+
+		    BEGIN
+   			 EXECUTE @Length = flxp_PopFirstWord @ItemIdList OUTPUT, @FirstItemIdWord OUTPUT
+			 if right(@FirstItemIdWord,6)='ZA0101'  goto abandon
+			 select  @za0100=isnull(dictid,'') from gs_property where infofield=right(@FirstItemIdWord,6) and  infoid=left(@FirstItemIdWord,4)
+  			 select @za0101=isnull(description,'未知') from  gs_property where infofield=right(@FirstItemIdWord,6) and  infoid=left(@FirstItemIdWord,4)
+			 if @za0100=''
+				begin
+					set @strSQl=@FirstItemIdWord+" as '"+@za0101+"'"
+				end
+			else if len(ltrim(@za0100))=2
+				begin
+					--set @strSQl="(select isnull(description,'')  as  '"+@za0101+"' from gs_dictitem where gs_dictitem.dictvalue="+@FirstItemIdWord+" and gs_dictitem.dictid='"+ltrim(@za0100)+"') as  '"+@za0101+"'"
+					set @strSQl="dbo.get_DictIdName('"+ltrim(@za0100) + "',"+@FirstItemIdWord + ") as  '"+@za0101+"'"
+
+				end
+			else 
+				begin
+					set @strSQl="(select isnull(za0101,'')   from "+left(@za0100,4)+" where "+@FirstItemIdWord+"="+left(@za0100,4)+".za0100) as  '"+@za0101+"'"
+				end
+			if @strFLD="" 
+				set @strFLD=@strSQl
+			else
+				set @strFLD=@strFLD+","+@strSQl		
+	abandon:
+		    end 
+--合成SQL语句
+	if (@ASS<>'')
+		if(@STRCondtion='')
+			--set @strTBL="select "+@strFLD +" from "+@strTBL+" order by "+@ASS
+			set @strTBL="select "+@strFLD +" from "+@strTBL+"  where  "+@strMainObject+".zc9993='1'  "
+		else
+			--set @strTBL="select "+@strFLD +" from "+@strTBL+"  where  "+@strMainObject+".za0100 in ("+@STRCondtion+")  order by "+@ASS
+			set @strTBL="select "+@strFLD +" from "+@strTBL+"  where  "+@strMainObject+".za0100 in ("+@STRCondtion+") "
+	else
+		if(@STRCondtion='')
+
+			set @strTBL="select "+@strFLD +" from "+@strTBL+"  where  "+@strMainObject+".zc9993='1'"
+		else
+			set @strTBL="select "+@strFLD +" from "+@strTBL+"  where  "+@strMainObject+".za0100 in ("+@STRCondtion+") "
+
+
+
+		set @strOut=@strTBL
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO

@@ -31,13 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConfigMy, Version=1.0.0.0, Culture=neutral">
+    <Reference Include="ConfigMy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\PublishDll\ConfigMy.dll</HintPath>
-    </Reference>
-    <Reference Include="createdmquery, Version=1.0.0.0, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PublishDll\createdmquery.dll</HintPath>
     </Reference>
     <Reference Include="Operation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -93,6 +89,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\字典管理\createdmquery\createdmquery.csproj">
+      <Project>{9EFD11C7-F334-4334-9AA2-E5DB6D7E6F1F}</Project>
+      <Name>createdmquery</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\GMIS.CommonRightDataAccess.csproj">
       <Project>{5498E1F7-B7FB-43FE-8781-65F7CC97CF12}</Project>
       <Name>GMIS.CommonRightDataAccess</Name>

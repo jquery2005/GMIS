@@ -1,0 +1,4 @@
+D:\CSharp\GitHub\GMIS\PublishDll\createdmquery.dll
+D:\CSharp\GitHub\GMIS\PublishDll\createdmquery.pdb
+D:\CSharp\GitHub\GMIS\字典管理\createdmquery\obj\Debug\createdmquery.dll
+D:\CSharp\GitHub\GMIS\字典管理\createdmquery\obj\Debug\createdmquery.pdb

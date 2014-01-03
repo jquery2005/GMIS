@@ -1,0 +1,5 @@
+D:\CSharp\GitHub\GMIS\花名册绘制\DMServer\ConfigMy\obj\Debug\ConfigMy.dll
+D:\CSharp\GitHub\GMIS\PublishDll\ConfigMy.dll
+D:\CSharp\GitHub\GMIS\PublishDll\ConfigMy.pdb
+D:\CSharp\GitHub\GMIS\花名册绘制\DMServer\ConfigMy\obj\Debug\ConfigMy.csprojResolveAssemblyReference.cache
+D:\CSharp\GitHub\GMIS\花名册绘制\DMServer\ConfigMy\obj\Debug\ConfigMy.pdb

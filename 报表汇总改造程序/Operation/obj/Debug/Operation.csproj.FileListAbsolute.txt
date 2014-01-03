@@ -1,0 +1,5 @@
+D:\CSharp\GitHub\GMIS\PublishDll\Operation.dll
+D:\CSharp\GitHub\GMIS\PublishDll\Operation.pdb
+D:\CSharp\GitHub\GMIS\报表汇总改造程序\Operation\obj\Debug\Operation.csprojResolveAssemblyReference.cache
+D:\CSharp\GitHub\GMIS\报表汇总改造程序\Operation\obj\Debug\Operation.dll
+D:\CSharp\GitHub\GMIS\报表汇总改造程序\Operation\obj\Debug\Operation.pdb

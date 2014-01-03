@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMIS.CommonRightDataAccess"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gmis.Protection", "权限接口\Gmis.Protection\Gmis.Protection.csproj", "{CBF0D2F8-9728-471F-A19B-9549F186221C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U_Zwd", "花名册绘制\U_Zwd\U_Zwd.csproj", "{F631B4C9-D691-463D-A600-BB2A52DE666E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "U_Zwd_VB", "花名册绘制\U_Zwd_VB\U_Zwd_VB.vbproj", "{9E7E6B89-04EF-4470-990A-2982D0B68A11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigMy", "花名册绘制\DMServer\ConfigMy\ConfigMy.csproj", "{D0139247-F9ED-47EC-9115-7ED9951B4E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "createdmquery", "字典管理\createdmquery\createdmquery.csproj", "{9EFD11C7-F334-4334-9AA2-E5DB6D7E6F1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operation", "报表汇总改造程序\Operation\Operation.csproj", "{40F801B2-DEF6-4F9F-81A2-484FD4E532F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +41,26 @@ Global
 		{CBF0D2F8-9728-471F-A19B-9549F186221C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF0D2F8-9728-471F-A19B-9549F186221C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBF0D2F8-9728-471F-A19B-9549F186221C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F631B4C9-D691-463D-A600-BB2A52DE666E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F631B4C9-D691-463D-A600-BB2A52DE666E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F631B4C9-D691-463D-A600-BB2A52DE666E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F631B4C9-D691-463D-A600-BB2A52DE666E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E7E6B89-04EF-4470-990A-2982D0B68A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7E6B89-04EF-4470-990A-2982D0B68A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7E6B89-04EF-4470-990A-2982D0B68A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7E6B89-04EF-4470-990A-2982D0B68A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0139247-F9ED-47EC-9115-7ED9951B4E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0139247-F9ED-47EC-9115-7ED9951B4E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0139247-F9ED-47EC-9115-7ED9951B4E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0139247-F9ED-47EC-9115-7ED9951B4E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EFD11C7-F334-4334-9AA2-E5DB6D7E6F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFD11C7-F334-4334-9AA2-E5DB6D7E6F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFD11C7-F334-4334-9AA2-E5DB6D7E6F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFD11C7-F334-4334-9AA2-E5DB6D7E6F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F801B2-DEF6-4F9F-81A2-484FD4E532F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F801B2-DEF6-4F9F-81A2-484FD4E532F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F801B2-DEF6-4F9F-81A2-484FD4E532F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F801B2-DEF6-4F9F-81A2-484FD4E532F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
